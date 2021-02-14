@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Passenger to car property passenger</title>
+    <script>
+         var car =  {
+                        make : 'Toyota',
+                        model : 'Camry',
+                        year : 2018,
+                        color : "Light Blue",
+                        passengers : [],
+                        convertible : false,
+                        mileage : 10000
+                    }
+        var passengers = ['Deji', 'Segun', 'Jumi', ' and Ade', 'Yinka'];
+        var capacity = 4;
+            function addPassengerToCar(pass, cap) {
+                i = 0
+                while (i < pass.length) {
+                    car.passengers.push(" "+pass[i]+"");
+                    i += 1
+                    if (i < 3) {
+                        alert("There are more seats to be occupied. "+(capacity - i)+" more seats remaining")
+                    }
+                    else if (i == 3) {
+                        alert("There is one more seat remaining.")
+                    }
+                    else {
+                        alert("Car is pretty occupied, kindly board another car, thank you.")
+                        break
+                    }
+                }
+                var passlist = "My passengers' names are "+car.passengers+""
+                return passlist;
+            }
+        var passengerList = addPassengerToCar(passengers, capacity);
+        alert(passengerList)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

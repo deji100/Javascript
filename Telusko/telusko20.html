@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByTagName</title>
+    <script>
+        function changeStyling()
+        {
+            var para = document.getElementsByTagName("p");
+            // para[0].style.color = 'blue';
+            // para[1].style.fontSize = '50px';
+            // para[2].style.fontWeight = 'bold';
+            // para[3].style.fontStyle = 'italic';
+
+            for (var i = 0; i < para.length; i++)
+            {
+                para[i].style.color = "orange";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <p>This is paragraph 3</p>
+    <p>This is paragraph 4</p>
+    <p>This is paragraph 5</p>
+    <br>
+    <button onclick="changeStyling()">Click me</button>
+</body>
+</html>

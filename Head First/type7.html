@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String manipu</title>
+    <script>
+        var emot = "XXOOxxoo";
+        var hugs = 0;
+        var kisses = 0;
+
+        emot = emot.trim();
+        // alert(emot)
+        emot = emot.toUpperCase();
+        // alert(emot)
+
+        for (i=0; i<emot.length; i++) {
+            if (emot.charAt(i) == "X") {
+                hugs++;
+                alert(hugs)
+            }
+            else if (emot.charAt(i) == "o") {
+                kisses++;
+                alert(kisses)
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

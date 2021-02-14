@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <script>
+        var name = "Deji";
+        var password = "Faruq@100";
+        function func1(){
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+            if (user == name && pass == password){
+                alert("User credentials correct");
+            }
+            else{
+                alert("Username and/or password not correct. Please use correct username and/or password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="user" placeholder="Username">
+    <br>
+    <br>
+    <input type="password" id="pass" placeholder="Password">
+    <br>
+    <br>
+    <button onclick="func1()">Submit</button>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecte2</title>
+    <script>
+        /*
+            Boolean can be objects (if defined with the new keyword)
+            Numbers can be objects (if defined with the new keyword)
+            Strings can be objects (if defined with the new keyword)
+            Dates are always objects
+            Math are always objects
+            Regular expression are always objects
+        */
+        function Car(car_brand, car_model, price) {
+        this.car_brand = car_brand;
+        this.car_model = car_model;
+        this.price = price;
+
+        this.teslaAutoPilot = function(){
+            document.write("<h1>This Car is Auto Pilot</h1>");
+        }
+    }
+    // 100 lines of code 
+
+    Car.fuelType = "Electric";
+
+    c1 = new Car("Toyota", "Camry", 33000);
+    document.write("<h1>"+ c1.car_brand +"</h1>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

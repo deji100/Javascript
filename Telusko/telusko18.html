@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation & getElementById method</title>
+    <script>
+        function fun1(){
+            var rd1 = document.getElementById("simple");
+            var rd2 = document.getElementById("telusko");
+            if (rd1.checked == true)
+                alert("The channel selected is: "+ rd1.value)
+            else if (rd2.checked == true)
+                alert("The channel selected is: "+ rd2.value)
+            else
+               alert("No channel selected.")
+        }
+    </script>
+</head>
+<body>
+    <input type="radio" value="Simple Snippet " name="grp1" id="simple">
+    <label for="simple">Simple Snippet</label>
+    <br>
+    <input type="radio" value="Telusko Learnings " name="grp1" id="telusko">
+    <label for="telusko">Telusko Learnings</label>
+    <br>
+    <button onclick="fun1()">Click me</button>
+</body>
+</html>

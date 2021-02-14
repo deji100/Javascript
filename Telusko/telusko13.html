@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <script>
+        /* Objects in JS */
+    //     var Car = {
+    //     car_model : "Model 1",
+    //     price : 45000,
+    //     car_brand : "Tesla",
+
+    //     teslaAutoPilot : function(){
+            // return "This car has Auto pilot</h1>";
+    //     }
+    // }
+    // Car.teslaAutoPilot()
+    // document.write("<h1>"+Car.price+"</h1>")
+
+    function Cars(car_brand, car_model, price) {
+        this.car_brand = car_brand;
+        this.car_model = car_model;
+        this.price = price;
+
+        this.teslaAutoPilot = function(){
+            document.write("<h1>This Car is Auto Pilot</h1>");
+        }
+    }
+
+    var car1 = new Cars('Toyota', 'Camry', 40000);
+    car1.teslaAutoPilot();
+    document.write("<h1>"+car1.car_brand+"</h1>");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

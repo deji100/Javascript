@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number == string</title>
+    <script>
+        if (99 == '99') {
+            console.log("number equal to string");
+        }
+        else {
+            console.log("No way a number equal to a string")
+        }
+
+        if("99" == 99) {
+            console.log("string equal to number")
+        }
+        else {
+            console.log("NO way a string equal to a number")
+        }
+
+        console.log('0' == 0) // converts '0' to number
+        console.log('0' == false) // same here
+        console.log('true' == true) // only converts true to number but doesn't convet 'true' at all
+        console.log(true == (1 == '1')) // converts the equality in the bracket first
+        console.log("strict equality")
+        console.log('0' === 0) // not of same type but same value result to false
+        console.log('0' === false) // same
+        console.log('true' === true) //same
+        console.log(true === (1 === '1')) // same
+        console.log("Arithmetic or other convertion")
+        console.log(3 + '4') // converts number to string then concatenate
+        console.log('3' + 4) // same here
+        console.log(3 * '4') // opposite of above expression. converts string to number then multiplies
+        console.log(80 / '10') // same here but divides
+        console.log('10' - 5) // same here but subtract
+        console.log(Infinity - '1') // equals infinity
+        console.log('1' - '1')
+        console.log('Result: ' + 50/10) 
+        console.log(3 + ' bananas ' + 2 + ' apples')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

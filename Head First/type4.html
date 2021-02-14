@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object equality</title>
+    <script>
+        // findcar
+        function findCarInLot(car) {
+            for (var i = 0; i < lot.length; i++) {
+                if (car == lot[i])
+                return lot[i]
+            }
+            return -1
+        }
+
+        var chevy = {
+            brand : 'Chevy',
+            model : "Bel Air"
+        };
+
+        var toyota = {
+            brand : "Toyota",
+            model : "Camry"
+        };
+
+        var fiat1 = {
+            brand : "Fiat",
+            model : "500"
+        };
+
+        var fiat2 = {
+            brand : "Fiat",
+            model : "500"
+        };
+
+        var lot = [chevy, toyota, fiat1, fiat2];
+
+        var loc1 = findCarInLot(chevy);
+        var loc2 = findCarInLot(toyota);
+        var loc3 = findCarInLot(fiat1);
+        var loc4 = findCarInLot(fiat2)
+        
+        console.log(loc1);
+        console.log(loc2);
+        console.log(loc3);
+        console.log(loc4);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

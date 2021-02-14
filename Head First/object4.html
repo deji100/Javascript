@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get and Set Secrete in superSecretFile</title>
+    <script>
+        var superSecretFile = {
+            level : "Classified",
+            opened : 0,
+            password : 2,
+            contents : "Dr Evel's next meeting is in Detroit."
+        };
+
+        function getSecret(file, secretPassword) {
+            if (file.password == secretPassword) {
+                file.opened += 1;
+                return file.contents;
+            }
+            else {
+                return "Invalid password, no secret for you.";
+            }
+        };
+
+        function setSecret(file, secretPassword, secret) {
+            if (secretPassword == file.password) 
+                file.opened = 0;
+                file.password = 5;
+                file.contents = secret;
+        };
+
+        var secret = getSecret(superSecretFile, 2);
+        console.log(secret);
+
+        setSecret(superSecretFile, 2, "Dr Evel's next meeting is in Philadelphia.");
+
+        var secret = getSecret(superSecretFile, 2);
+        console.log(secret);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

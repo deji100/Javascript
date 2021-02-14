@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight Ball</title>
+    <script>
+        var eightBall = {
+            index : 0,
+            advice : ['yes', 'no', 'maybe', 'not a chance'],
+            shake : function() {
+                var rand = Math.floor(Math.random() * this.advice.length);
+                this.index = rand;
+                if (this.index >= this.advice.length) {
+                    this.index = 0;
+                };
+                return this.index
+            },
+            look : function(index) {
+                return this.advice[this.index];
+            }
+        };
+        var ran = eightBall.shake();
+        console.log(ran)
+        console.log(eightBall.look(ran));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

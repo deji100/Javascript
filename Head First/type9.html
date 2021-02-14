@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brad and Larry compete.</title>
+    <script>
+        function parsePhone(phone) {
+            if (phone.length == 8) {
+                console.log("Phone number is almost valid, so chill for a sec.");
+                if (phone.charAt(3) == '-') {
+                    console.log("Finally phone number is valid, hence accepted.");
+                }
+                else {
+                    console.log("Phone number not valid, hence rejected.")
+                }
+            }
+            else {
+                console.log("Phone number must be 7 digits and a dash between, hence length of phone should be 8")
+            }
+        };
+
+        var phone = "123-4567";
+        parsePhone(phone);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

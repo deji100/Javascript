@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-O-Matic</title>
+    <script>
+        function makeCar() {
+            var makes = ["Chevy", "GM", "Fiat", "Webville Motors", "Tucker"];
+            var models = ["Cadillac", "500", "Bel-Air", "Taxi", "Torpedo"];
+            var years = [1955, 1957, 1948, 1954, 1961];
+            var colors = ["red", "blue", "tan", "yellow", "white"];
+            var convertible = [true, false];
+
+            var make1 = Math.floor(makes.length * Math.random())
+            var model1 = Math.floor(models.length * Math.random())
+            var year1 = Math.floor(years.length * Math.random())
+            var color1 = Math.floor(colors.length * Math.random())
+            var conver1 = Math.floor(convertible.length * Math.random())
+
+            var mycar = {
+                    make : makes[make1],
+                    model : models[model1],
+                    year : years[year1],
+                    color : colors[color1],
+                    convertible : convertible[conver1]
+            }
+            return mycar
+        }
+
+        function displayCar(mine) {
+            return "I want my car to have the make "+mine.make+", model "+mine.model+", color "+mine.color+", should make convertable "+mine.convertible+" and year of production "+mine.year+".";
+        };
+
+        function cons() {
+            var car = displayCar(makeCar());
+            console.log(car);
+        }
+
+        cons()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

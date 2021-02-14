@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in Js</title>
+    <script>
+        /*
+        In JS we have 2 types of scopes - Global & Local depending on where you create your variables */
+        var a = 5; // Global variable
+        document.write("<h1>"+ a +"</h1>")
+        function myfunc(){
+            var b = 10; // Local variable
+            document.write("<h1>"+ b +"</h1>")
+            document.write("<h1>"+ a +"</h1>")
+
+        }
+        myfunc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

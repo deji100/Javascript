@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank heist successful</title>
+    <script>
+        var balance = 100000;
+        var cameraOn = true;
+
+        function steal(money, amount) {
+            cameraOn = false;
+            // var amount = 100000;
+            
+            money -= amount;
+            cameraOn = true
+
+            return alert("New balance $"+money+", amount stolen $"+amount+". You are a real thief.")
+        }
+        steal(balance, 100000)
+        // alert(balance)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

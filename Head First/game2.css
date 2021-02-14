@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: lightgreen;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+    /* border: 1px solid green; */
+}
+
+.round {
+    border: 1pc solid rgba(0, 128, 0, 0.415);
+    border-radius: 50%;
+    padding: 50px;
+}
+
+#slant {
+    border: none;
+    background-color: rgba(0, 128, 0, 0.489);
+    position: absolute;
+    width: 690px;
+    height: 20px;
+    transform: rotate(135deg);
+    box-shadow: 1px 1px 20px 1px rgba(0, 128, 0, 0.564);
+}
+
+table {
+    background-color: rgba(0, 128, 0, 0.21);
+    border: 3px solid green;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+}
+
+#letters {
+    position: absolute;
+    left: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#letters div {
+    position: relative;
+    bottom: 30px;
+    margin-top: 53px;
+}
+
+#num {
+    position: absolute;
+    display: flex;
+}
+
+#num div {
+    position: relative;
+    top: 275px;
+    right: 30px;
+    margin-left: 65px;
+}
+
+#message {
+    position: absolute;
+    top: 10px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    /* border: 1px solid green; */
+    text-align: center;
+    padding: 10px;
+}
+
+#fom {
+    position: absolute;
+    top: 580px;
+    right: 180px;
+    padding: 10px;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green
+}
+
+#text {
+    padding: 8px;
+    background-color: lightgreen;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+}
+
+#fire {
+    padding: 7px;
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
+.hit {
+    background: url(/hit.jpg) no-repeat center center;
+}
+
+.miss {
+    background: url(miss.jpg) no-repeat center center;
+}
+

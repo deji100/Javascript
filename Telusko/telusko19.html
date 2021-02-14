@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation with getElementById method</title>
+    <script>
+        function fun1(){
+            var select = document.getElementById("selectbox");
+            alert(select.options[select.selectedIndex].value)
+        }
+    </script>
+</head>
+<body>
+      <select  name="" id="selectbox">
+          <option value="deji">Deji</option>
+          <option value="segun">Segun</option>
+          <option value="jide">Jide</option>
+          <option value="demola">Demola</option>
+          <option value="precious">Precious</option>
+      </select>
+      <br>
+      <br>
+      <button onclick="fun1()">Click me</button>
+</body>
+</html>

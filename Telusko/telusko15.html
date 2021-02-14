@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script>
+        function buttonClick(){
+            // alert("Button Cliked.")
+            var x = document.getElementById('heading').innerHTML;
+            alert(x)
+            // "Telusko Learnings";
+        }
+        // buttonClick()
+    </script>
+</head>
+<body>
+    <button onclick="buttonClick()">Click Me</button>
+    <h1 id="heading">Some Random Text.</h1>
+</body>
+</html>

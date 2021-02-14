@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank heist failed</title>
+    <script>
+        var balance = 10500;
+        var cameraOn = true;
+        function steal(balance, amount) {
+            cameraOn = false;
+            if (amount < balance) {
+                balance = balance - amount;
+            }
+            return amount;
+            cameraOn = true;
+        }
+        var amount = steal(balance, 1250);
+        alert("Criminal: you stole " + amount + "!" + " Remaining balance" + balance);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

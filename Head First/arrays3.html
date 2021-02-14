@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Report Score</title>
+    <script>
+        // CEO's scores
+        var scores = [60,  50,  60,  58,  54,  54, 
+                      58,  50,  52,  54,  48,  69,
+                      34,  55,  51,  52,  44,  51,
+                      69,  64,  66,  55,  52,  61,
+                      46,  31,  57,  52,  44,  18,
+                      41,  53,  55,  61,  51,  44];
+
+        var costs = [ 25,  27,  25,  25,  25,  25, 
+                      33,  31,  25,  29,  27,  22, 
+                      31,  25,  25,  33,  21,  25, 
+                      25,  25,  28,  25,  24,  22,
+                      20,  25,  30,  25,  24,  25, 
+                      25,  25,  27,  25,  26,  29];
+
+        var i = 0;
+
+        // function to find the highest scores and their index
+        function getHighScore(scores) {
+            var max = 0; // declared max and assigned it 0 value
+            var index1 = 0; // declared index1 and assigned it 0 value
+            var index2 = 0; // same here for index2
+            while (i < scores.length) { // using while loop to iterate through the list of scores passed as an argument to the function getHighScore()
+                document.write("Bubble solution #"+i+"  score: "+scores[i]+" <br>"); // will print each index and corresponding value or score to the web page
+                if (scores[i] > max) { // means that if the value of the index scores[i] is greater than our global variable max then
+                    max = scores[i]; // max should be assigned that index value
+
+                    // method 1 to get one of the idexes that has max value 69
+                    if (max == scores[i]){ // to get the index of max value, we examine if max value is equal to the value of scores[i], and this is possible because the first if statement is true for a particular index value, so 
+                        index1 = i; // we assign the index of that value to index1
+                    };
+                };
+
+                // method 1 to get the other index that has max value 69
+                if (max == scores[i]) { // same with method 1 above but this time, our loop keeps iterating to find the next index that has the max value 69
+                    index2 = i; // then we assign that index to index2
+                };
+                
+                i += 1; // adding 1 for each iteration
+            };
+            alert("The highest and potential solutions are "+index1+" and "+index2+" and their score is "+max+"");
+            return max // returns max value
+        }
+        
+        // method 2 to get the both solutions that have 69 as max
+        function getSolutionsAndMostCostEffective(costs, scores, max) {
+            var cost = 100;
+            var index;
+            var bestSolutions = []
+            for (var i = 0; i < scores.length; i++) {
+                if (scores[i] == max) {
+                    bestSolutions.push(i);
+                    if (cost > costs[i]) {
+                        index = i;
+                        cost = costs[i];
+                    }
+                }
+            }
+            alert("The best solutions are "+bestSolutions[0]+" and "+bestSolutions[1]+"");
+            return index
+        }
+        var maxx = getHighScore(scores);
+        var mostCostEffective = getSolutionsAndMostCostEffective(costs, scores, maxx);
+        console.log("Bubble Solution #" + mostCostEffective + " is the most cost effective");
+
+
+        // find the highest cost effective bubble solution
+        // var cost = 100;
+        // var index;
+        // function getMostCostEffectiveSolution(costs, scores, max) {
+        //     for (i = 0; i < scores.length; i++) {
+        //         if (scores[i] == max) {
+        //             if (cost > costs[i]) {
+        //                 index = i;
+        //                 cost = costs[i];
+        //             }
+        //         }
+        //     }
+        //     return index
+        // }
+        // var mostCostEffective = getMostCostEffectiveSolution(costs, scores, maxx);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms2</title>
+    <script>
+        function validate(){
+            var username = document.getElementById("user");
+            var password = document.getElementById("pass");
+
+            if (username.value.trim() == '')
+            {
+                // alert("Username cannot be blank.");
+                username.style.border = "3px solid red";
+                document.getElementById("label").style.visibility = "visible";
+                return false;
+            }
+
+            else if (password.value.trim() == '')
+            {
+            alert("Password cannot be blank.");
+            password.style.border = "3px solid red";
+            return false;
+            }
+
+            else if (password.value.length < 5)
+            {
+                // password.style.border = "3px solid red";
+                alert("Password too shot.");
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate();" action="form.html">
+        <input type="text" id="user" placeholder="Username">
+        <label id="label" for="user" style="visibility: hidden; color: red;">Invalid</label>
+        <br>
+        <br>
+        <input type="password" id="pass" placeholder="Password">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

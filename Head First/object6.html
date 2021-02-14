@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to method in object</title>
+    <script>
+        var car = {
+            make : "Toyota",
+            model : "Camry",
+            color : "Green",
+            mileage : 1000,
+            started : false,
+            fuel_level : 0,
+            start : function() {
+                while (this.started == false) {
+                    if (this.started == false) {
+                        alert("Has the car started?")
+                        alert("No, you need to turn on the engine to start the car.");
+                        var start = prompt("Turn on the engine to start car.")
+                        if (start == "on") {
+                            this.started = true;
+                            alert("The car's finally started.")
+                            break
+                        }
+                        else {
+                            alert("You used the wrong key to start the car. Try a different key")
+                        }
+                    }
+                }
+            },
+            stop : function() {
+                while (this.started == true) {
+                    if (this.started == true) {
+                        alert("Have you stop the car?");
+                        alert("No, I have not parked the car yet. Almost there");
+                        var stop = prompt("Turn off the engine to stop the car.");
+                        if (stop == "off") {
+                            this.started = false; 
+                            alert("Car has stopped.");
+                        }
+                        else {
+                            alert("You have not turned off the engine, please do.")
+                            alert("After 5 minutes")
+                        }
+                    }
+                }
+            }
+        }
+        car.start()
+        car.stop()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
