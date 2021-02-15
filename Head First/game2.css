@@ -95,7 +95,7 @@ td {
     background-color: green
 }
 
-#text {
+#guessInput {
     padding: 8px;
     background-color: lightgreen;
     border: none;
@@ -103,7 +103,7 @@ td {
     font-weight: bolder;
 }
 
-#fire {
+#fireButton {
     padding: 7px;
     cursor: pointer;
     background-color: lightgreen;

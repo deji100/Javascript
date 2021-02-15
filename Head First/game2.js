@@ -14,51 +14,102 @@ var view = {
 }
 
 var model = {    
-    boardWidth : "7 cells wide.",
-    boardHeight : "7 cells long.",
+    boardSize : 7,
     numShips : 3,
-    shipLength : 3,
+    shipSize : 3,
     shipsSunk : 0,
     ships : [{locations: ['06', '16', '26'], hits: ['', '', '']},
              {locations: ['24', '34', '44'], hits: ['', '', '']},
-             {locations: ['10', '11', '12'], hits: ['', '', 'hit']}],
+             {locations: ['10', '11', '12'], hits: ['', '', '']}],
     
     fire : function(guess) {
-        for (i=0; i < this.numShips; i++) {
-            var ship = this.ships[i];
+        for (var i=0; i < this.numShips; i++) {
+            var ship = this.ships[i]
             var index = ship.locations.indexOf(guess);
             if (index >= 0) {
                 ship.hits[index] = 'hit';
-                return true
+                view.displayHit(guess);
+                view.displayMessage("HIT!");
+                if (this.isSunk(ship)) {
+                    view.displayMessage("You sank my ship!!!");
+                    this.shipsSunk++;
+                }
+                return true;
             }
         }
-        return false
+        view.displayMiss(guess);
+        view.displayMessage("MISS!");
+        return false;
+    },
+    isSunk : function(ship) {
+        for (var i=0; i < this.shipSize; i++) {
+            if (ship.hits[i] !== 'hit')  
+                return false;
+        }
+        return true;
     }
 }
 
+function parseGuess(guess) {
+    var alphabets = ["A", "B", "C", "D", "E", "F", "G"];
 
-var guess = '16';
-console.log(model.fire(guess));
+    if (guess == null || guess.length != 2) {
+        alert("Oops, please enter a valid Letter and Number on the board.");
+    }
+    else {
+        var firstChar = guess.charAt(0);
+        var row = alphabets.indexOf(firstChar);
+        var column = guess.charAt(1);
+
+        if (isNaN(row) || isNaN(column)) {
+            alert("Oops, that isn't on the board.");
+        }
+        else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+            alert("Oops, that is way off the board.");
+        }
+        else {
+            return row + column;
+        }
+    }
+    return null;
+}
+
+var controller = {
+    guesses : 0,
+    processGuess : function(guess) {
+        var location = parseGuess(guess);
+        if (location) {
+            this.guesses++;
+            var hit = model.fire(location);
+            if (hit && model.shipsSunk === model.numShips) {
+                view.displayMessage("You sank all my battleships in "+ this.guesses +" guesses.")
+            }
+        }
+    }
+}
+
+function init() {
+    var button = document.getElementById("fireButton");
+    button.onclick = handleFireButton;
+    var guessInput = document.getElementById('guessInput');
+    guessInput.onkeypress = handleKeyPress;
+}
+
+function handleKeyPress(e) {
+    var fireButton = document.getElementById('fireButton')
+    if (e.keyCode  === 13) {
+        fireButton.click();
+        return false;
+    }
+}
+
+function handleFireButton() {
+    var guessInput = document.getElementById('guessInput');
+    var guess = guessInput.value;
+    controller.processGuess(guess);
+    guessInput.value = '';
+}
+
+window.onload = init;
 
 
-
-// loc1 : 1,
-//     loc2 : 2,
-//     loc3 : 3,
-//     loc4 : 4,
-//     loc5 : 5,
-//     loc6 : 6,
-//     loc7 : 7,
-//     loc8 : 8,
-//     loc9 : 9,
-//     cells : [
-//              '00', '01', '02', '03', '04', '05', '06', '07',
-//              '10', '11', '12', '13', '14', '15', '16', '17',
-//              '20', '21', '22', '23', '24', '25', '26', '27',
-//              '30', '31', '32', '33', '34', '35', '36', '37',
-//              '40', '41', '42', '43', '44', '45', '46', '47',
-//              '50', '51', '52', '53', '54', '55', '56', '57',
-//              '60', '61', '62', '63', '64', '65', '66', '67'
-//             ],
-
-//     locs : [[this.loc1, this.loc2, this.loc3], [this.loc4, this.loc5, this.loc6,], [this.loc7, this.loc8, this.loc9]]
