@@ -13,8 +13,11 @@ var view = {
     }
 }
 
-var model = {    
+var model = {
     boardSize : 7,
+    cells : 49,
+    rows : ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    columns : [1, 2, 3, 4, 5, 6, 7],
     numShips : 3,
     shipSize : 3,
     shipsSunk : 0,
@@ -51,7 +54,7 @@ var model = {
 }
 
 function parseGuess(guess) {
-    var alphabets = ["A", "B", "C", "D", "E", "F", "G"];
+    var alphabets = model.rows;
 
     if (guess == null || guess.length != 2) {
         alert("Oops, please enter a valid Letter and Number on the board.");
