@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn on the light</title>
+    <script>
+        function lightOn() {
+            var on = document.getElementById("off");
+            on.src = "../images/light.jpg"
+        }
+        function lightOff() {
+            var off = document.getElementById("off");
+            off.src ="../images/bulb.png"
+        }
+    </script>
+    <style>
+        img {
+            width: 120px;
+            margin-left: 150px;
+        }
+        button {
+            margin: 60px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/bulb.png" id="off" alt="">
+    <br>
+    <br>
+    <button onclick="lightOff()">Turn Me Off</button>
+    <button onclick="lightOn()">Turn Me On</button>
+</body>
+</html>

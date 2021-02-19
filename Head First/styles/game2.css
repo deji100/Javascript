@@ -78,9 +78,11 @@ td {
     top: 10px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    /* border: 1px solid green; */
+    border: 1px solid green;
     text-align: center;
     padding: 10px;
+    transition: ease-in;
+    transition-delay: 1000s;
 }
 
 #fom {
