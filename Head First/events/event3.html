@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = init 
+        function init() {
+            var images = document.getElementsByTagName("img");
+            for (var i=0; i < images.length; i++) {
+                images[i].onclick = clearView;
+            }
+        }
+        function clearView(eventObj) {
+            var image = eventObj.target;
+            var name = image.id;
+            name = name + ".jpeg";
+            image.src = name;
+        }
+    </script>
+</head>
+<body>
+    <img id="hack3" src="../images/hack33.jpg" alt="">
+    <img id="bab" src="../images/babe.jpg" alt="">
+    <img id="lady" src="../images/my__lady.jpg" alt="">
+</body>
+</html>
