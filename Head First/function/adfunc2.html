@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying First Class</title>
+    <script>
+        // no_fly_list = [
+        //     {name : '', paid : 0},
+        //     {name : 'Dr. Evel', paid : true},
+        //     {name : '', paid : 0},
+        //     {name : '', paid : 0}
+        // ]
+        passengers = [
+            {name : 'Jane Doloop', paid : true, ticket : "premium"},
+            {name : 'Dr. Evel', paid : true, ticket : "firstclass"},
+            {name : 'Sue Property', paid : false, ticket : "firstclass"},
+            {name : 'John Funcall', paid : true, ticket : "coach"},
+            {name : 'Sophia Benz', paid : true, ticket : "coach"},
+            {name : 'Deji Adeyemi', paid : true, ticket : "premium"}
+        ]
+
+        function processPassengers(passengers, testFunction) {
+            for (var i=0; i < passengers.length; i++) {
+                if (testFunction(passengers[i])) {
+                    return false
+                }
+            }
+            return true
+        }  
+
+        function checkNoFlyList(passenger) {
+            return (passenger.name === "Dr. Evel")
+        }
+
+        function checkNotPaid(passenger) {
+            return (!passenger.paid)
+        }
+
+        function printPassenger(passenger) {
+            return console.log(passenger)
+        }
+
+        function servePassengers(passengers) {
+            for (var i=0; i < passengers.length; i++) {
+                serveCustomer(passengers[i])
+            }
+        }
+
+        function serveCustomer(passenger) {
+            var getDrinkOrder = createDrinkOrder(passenger);
+            getDrinkOrder();
+            var getDinnerOrder = createDinnerOrder(passenger);
+            getDinnerOrder();
+            // getDrinkOrderFunction();
+            // getDrinkOrderFunction();
+
+            // getDrinkOrderFunction();
+        }
+
+        function createDrinkOrder(passenger) {
+            var drinkOrder;
+
+            if (passenger.ticket === "firstclass") {
+                drinkOrder = function(){
+                    alert("Would you like a cocktail or wine?");
+                }
+            }
+            else if (passenger.ticket === "premium") {
+                drinkOrder = function() {
+                    alert("Would you prefer Coctail or Wine or Cola or Water")
+                }
+            }
+            else {
+                drinkOrder = function(){
+                    alert("Your choice is cola or water?");
+                }
+            }
+            return drinkOrder;
+        }
+
+        function createDinnerOrder(passenger) {
+            var dinnerOrder;
+
+            if (passenger.ticket === "premium") {
+                dinnerOrder = function() {
+                    alert("Would you prefer snack box or cheese plate")
+                }
+            }
+            else if (passenger.ticket === "firstclass") {
+                dinnerOrder = function() {
+                    alert("Would you like chicken or pasta")
+                }
+            }
+            else {
+                dinnerOrder = function() {
+                    alert("You choice is peanuts or pretzels")
+                }
+            }
+            return dinnerOrder;
+        }
+        servePassengers(passengers)
+        // var allCanFly = processPassengers(passengers, checkNoFlyList)
+        // if (!allCanFly) {
+        //     console.log("We cannot take off because we have a passenger on the no fly list.")
+        // }
+        // else {
+        //     console.log("Belt in, we are about to fly!!")
+        // }
+
+        // var allPaid = processPassengers(passengers, checkNotPaid)
+        // if (!allPaid) {
+        //     console.log("The plane cannot take off: not everyone has paid.")
+        // }
+
+        // var passenger = processPassengers(passengers, printPassenger)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

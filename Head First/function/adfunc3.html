@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        no_fly_list = [
+            {name : '', paid : 0},
+            {name : 'Dr. Evel', paid : 0},
+            {name : '', paid : 0},
+            {name : '', paid : 0}
+        ]
+
+        function checkNoFlyList(passenger) {
+            for (var i=0; i < passenger.length; i++) {
+                if (passenger[i].name) {
+                    console.log(passenger[i].name)
+                    return console.log(true)
+                }
+            }
+            return false
+        }
+
+        function notPaid(passenger) {
+            for (var i=0; i < passenger.length; i++) {
+                if (passenger[i].paid) {
+                    return console.log(true)
+                }
+            }
+            return false
+        }
+        checkNoFlyList(no_fly_list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

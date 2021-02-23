@@ -12,24 +12,31 @@
         }
     </style>
     <script>
-        window.onload = init 
+        window.onload = init;
         function init() {
             var images = document.getElementsByTagName("img");
             for (var i=0; i < images.length; i++) {
-                images[i].onclick = clearView;
+                images[i].onmouseover = clearView;
+                images[i].onmouseout = reblur;
             }
         }
         function clearView(eventObj) {
             var image = eventObj.target;
             var name = image.id;
-            name = name + ".jpeg";
-            image.src = name;
+            name = ""+name+".jpeg";
+            image.src = "../images/"+name+"";
+        }
+        function reblur(eventObj) {
+            var image = eventObj.target;
+            var name = image.id;
+            name = ""+name+"blur.jpg"
+            image.src = "../images/"+name+"";
         }
     </script>
 </head>
 <body>
-    <img id="hack3" src="../images/hack33.jpg" alt="">
-    <img id="bab" src="../images/babe.jpg" alt="">
-    <img id="lady" src="../images/my__lady.jpg" alt="">
+    <img id="hack3" src="../images/hack3blur.jpg" alt="">
+    <img id="bab" src="../images/babblur.jpg" alt="">
+    <img id="lady" src="../images/ladyblur.jpg" alt="">
 </body>
 </html>
