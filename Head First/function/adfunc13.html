@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure exercise</title>
+    <script>
+        // Specimen A
+        function makePassword(password) {
+            return function passwordGuess(guess) {
+                return (guess === password);
+            }
+        }
+
+        var mkpassword = makePassword("Faruq@100")
+        var result = mkpassword("Faruq@100")
+        console.log(result)
+
+        // Specimen B
+        function multN(n) {
+            return function multX(x) {
+                return (n * x)
+            }
+        }
+        var mul = multN(5);
+        var result = mul(3)
+        console.log(result)
+
+        // Specimen C
+        function makeCounter() {
+            var count = 0;
+            return {
+                increment : function() {
+                    count++
+                    return count
+                }
+            }
+        }
+
+        var mkcount = makeCounter()
+        var result = mkcount.increment
+        console.log(result())
+        console.log(result())
+        console.log(result())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
