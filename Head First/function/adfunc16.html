@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click me with closure.</title>
+    <style>
+        body, button {
+            margin: 10px;
+        }
+    
+        div {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = ()=> {
+            var count = 0;
+            var btn = document.getElementById('btn');
+            var div = document.getElementById('message');
+            btn.onclick = ()=> {
+                count++;
+                div.innerHTML = 'You have clicked me '+count+' times already.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">Click Me!</button>
+    <div id="message"></div>
+</body>
+</html>

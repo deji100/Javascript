@@ -8,17 +8,16 @@
         var balance = 100000;
         var cameraOn = true;
 
-        function steal(money, amount) {
+        function steal(amount) {
             cameraOn = false;
-            // var amount = 100000;
             
-            money -= amount;
+            balance -= amount;
             cameraOn = true
 
-            return alert("New balance $"+money+", amount stolen $"+amount+". You are a real thief.")
+            return alert("New balance $"+balance+", amount stolen $"+amount+". You are a real thief.")
         }
-        steal(balance, 100000)
-        // alert(balance)
+        steal(100000)
+        alert(balance)
     </script>
 </head>
 <body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MouseOver blurs images</title>
+    <title>MouseOver blurs images 2</title>
     <style>
         img {
             width: 400px;
@@ -16,8 +16,7 @@
         function init() {
             var images = document.getElementsByTagName("img");
             for (var i=0; i < images.length; i++) {
-                images[i].onmouseover = clearView;
-                images[i].onmouseout = reblur;
+                images[i].onclick = clearView
             }
         }
         function clearView(eventObj) {
@@ -25,12 +24,12 @@
             var name = image.id;
             name = ""+name+".jpeg";
             image.src = "../images/"+name+"";
-        }
-        function reblur(eventObj) {
-            var image = eventObj.target;
-            var name = image.id;
-            name = ""+name+"blur.jpg"
-            image.src = "../images/"+name+"";
+
+            setTimeout(function() {
+                var name = image.id;
+                name = ""+name+"blur.jpg"
+                image.src = "../images/"+name+"";
+            }, 3000)
         }
     </script>
 </head>

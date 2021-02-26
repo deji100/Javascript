@@ -13,9 +13,9 @@
             {name : '', paid : 0}
         ]
 
-        function checkNoFlyList(passenger) {
-            for (var i=0; i < passenger.length; i++) {
-                if (passenger[i].name) {
+        function checkNoFlyList(passengers) {
+            for (var i=0; i < passengers.length; i++) {
+                if (passengers[i].name) {
                     console.log(passenger[i].name)
                     return console.log(true)
                 }

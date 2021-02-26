@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pass anonymous function</title>
     <script>
-        administer(patient,
-                    function(dossage) {
+        administer(patient, (dossage)=> {
                         if (dossage > 0) {
-                            inject(dossage)}},
-                            time);
+                            inject(dossage)}
+                        }, time);
     </script>
 </head>
 <body>
