@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car object</title>
+    <script>
+        function Car(params) {
+            this.make = params.make;
+            this.model = params.model;
+            this.color = params.color;
+            this.year = params.year;
+            this.passengers = params.passengers;
+            this.convertible = params.convertible;
+            this.mileage = params.mileage;
+            this.started = params.started;
+            this.start = ()=> {
+                    this.started = true;
+            };
+            this.stop = ()=> {
+                    this.started = false;
+            };
+            this.drive = ()=> {
+                if (this.started) {
+                    console.log("Testing my "+this.make+" around the hood.");
+                }else {
+                    console.log('Start the engine first.');
+                };
+            };
+        };
+
+        var chevyCar = {
+            make: 'Chevy',
+            model: 'Bel Air',
+            color: 'Red',
+            year: 1957,
+            convertible: false,
+            passenger: 2,
+            mileage: 1020,
+            started: true
+        }
+        var chevy = new Car(chevyCar)
+        console.log(chevy)
+        // console.log(chevy instanceof Car)
+
+        var cadiCar = {
+            make: 'GM',
+            model: 'Cadillac',
+            color: 'Tan',
+            year: 1988,
+            convertible: false,
+            passenger: 4,
+            mileage: 10200,
+            started: true
+        }
+        var cadi = new Car(cadiCar);
+        console.log(cadi)
+
+        var taxiCar = {
+            make: 'Webvile Motors',
+            model: 'Taxi',
+            color: 'Yellow',
+            year: 2000,
+            convertible: false,
+            passenger: 4,
+            mileage: 34678,
+            started: true
+        }
+        var taxi = new Car(taxiCar);
+        console.log(taxi)
+
+        var fiatCar = {
+            make: 'Fiat',
+            model: '500',
+            color: 'Sky Blue',
+            year: 1950,
+            convertible: false,
+            passenger: 2,
+            mileage: 10205,
+            started: true
+        }
+        var fiat = new Car(fiatCar);
+        console.log(fiat)
+
+        var testCar = {
+            make: 'Webvile Car',
+            model: 'Test Car',
+            color: 'Dark Green',
+            year: 1970,
+            convertible: false,
+            passenger: 4,
+            mileage: 1524,
+            started: true
+        }
+        var test = new Car(testCar);
+        console.log(testCar)
+        var cars = [chevy, cadi, taxi, fiat, test]
+        for (var i = 0; i < cars.length; i++) {
+            var car = cars[i].drive()
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

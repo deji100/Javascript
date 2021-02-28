@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instance of an Object</title>
+    <script>
+         function Car(params) {
+            this.make = params.make;
+            this.model = params.model;
+            this.color = params.color;
+            this.year = params.year;
+            this.passengers = params.passengers;
+            this.convertible = params.convertible;
+            this.mileage = params.mileage;
+            this.started = params.started;
+            this.start = ()=> {
+                    this.started = true;
+            };
+            this.stop = ()=> {
+                    this.started = false;
+            };
+            this.drive = ()=> {
+                if (this.started) {
+                    console.log("Testing my "+this.make+" around the hood.");
+                }else {
+                    console.log('Start the engine first.');
+                };
+            };
+        };
+
+        function Duck(type, weigth) {
+            this.type = type;
+            this.weigth = weigth;
+        }
+
+        var duck1 = new Duck('RedHeaded', 20)
+        if (duck1 instanceof Car) {
+            console.log('Congrats it is a Car.')
+        }else {
+            console.log('Oops, This is not a Car but it is a duck.')
+        }
+        
+        var chevyCar = {
+            make: 'Chevy',
+            model: 'Bel Air',
+            color: 'Red',
+            year: 1957,
+            convertible: false,
+            passenger: 2,
+            mileage: 1020,
+            started: true
+        }
+        var chevy = new Car(chevyCar)
+        // console.log(chevy)
+        if (chevy instanceof Car) {
+            console.log("Congrats, it's a Car!")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

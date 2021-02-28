@@ -11,6 +11,13 @@
             this.name = name;
             this.breed = breed;
             this.weight = weight;
+            this.bark = ()=> {
+                if (this.weight > 10) {
+                    console.log(this.name + ' says Woof Woof')
+                }else {
+                    console.log(this.name + ' says woof woof')
+                }
+            }
         }
 
         var fido = new Dog('Fido', 'Mixed', 38);
@@ -23,19 +30,21 @@
             if (dogs[i].weight > 10) {
                 size = 'Large';
             }
-            console.log("Dog: " + dogs[i].name + " is a " + size + ' ' + dogs[i].breed)
+            console.log("Dog: " + dogs[i].name + " is a " + size + ' ' + dogs[i].breed);
+            var bark = dogs[i].bark;
+            bark()
         }
 
 
 
         // Duck object constructor
-        function Duck(type, canFly) {
-            this.type = type;
-            this.canFly = canFly;
-        }
+        // function Duck(type, canFly) {
+        //     this.type = type;
+        //     this.canFly = canFly;
+        // }
 
-        var duck = new Duck('Redheaded', true)
-        console.log(duck.type)
+        // var duck = new Duck('Redheaded', true)
+        // console.log(duck.type)
     </script>
 </head>
 <body>

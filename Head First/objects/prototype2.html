@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot</title>
+    <script>
+        Robot.prototype.maker = 'ObjectsRUs';
+
+        Robot.prototype.speaks = function() {
+            console.log('My name is ' + this.name);
+        };
+
+        Robot.prototype.makeCoffee = function() {
+            console.log('I serve everyone coffee');
+        };
+
+        Robot.prototype.blinkLights = function() {
+            console.log('Blink Blink!');
+        };
+
+        function Robot(name, year, owner) {
+            this.name = name;
+            this.year = year;
+            this.owner = owner;
+        };
+
+        var robby = new Robot('Robby', 1956, 'Dr. Morbius');
+        robby.onOffSwitch = true;
+        robby.makeCoffee = ()=> {
+            console.log('I only serve Starbucks coffee.');
+        }
+
+        console.log(robby.name, 'was made by', robby.maker, 'in the year', robby.year, 'and owned by', robby.owner)
+        robby.speaks();
+        robby.makeCoffee();
+        robby.blinkLights();
+
+        var rosie = new Robot('Rosie', 1962, 'George Jetson');
+        rosie.cleanHouse = ()=> {
+            console.log("love cleaning my owner's house");
+        }
+
+        console.log(rosie.name, 'was made by', rosie.maker, 'in the year', rosie.year, 'and owned by', rosie.owner)
+        rosie.speaks()
+        rosie.makeCoffee()
+        rosie.blinkLights()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

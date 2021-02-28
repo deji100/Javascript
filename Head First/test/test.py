@@ -24,3 +24,21 @@ print(obj.setdefault(60, 9))
 #     if i > maxx:
 #         maxx = i
 # print(maxx)
+
+list1 = list()
+list1.append('Ello')
+list1[0] = 1
+print(list1)
+
+print(dict())
+print(str())
+print(int())
+print(float())
+print(set())
+print(tuple())
+print(type(list()))
+
+
+
+
+

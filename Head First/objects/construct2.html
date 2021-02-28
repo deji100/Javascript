@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor exercise</title>
+    <script>
+        function Widget(partNo, size) {
+            this.partNo = partNo;
+            this.size = size;
+        }
+
+        function FormFactor(material, widget) {
+            this.material - material;
+            this.widget = widget;
+        }
+
+        var widget1 = new Widget(100, 'Large');
+        var widget2 = new Widget(101, 'Small');
+
+        var formFactorA = new FormFactor('Plastic', widget1);
+        var formFactorB = new FormFactor('Metal', widget2);
+
+        console.log(formFactorA.widget.size)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car object</title>
+    <script>
+        function Car(make, model, color, year, passengers, convertible, mileage, started) {
+            this.make = make;
+            this.model = model;
+            this.color = color;
+            this.year = year;
+            this.passengers = passengers;
+            this.convertible = convertible;
+            this.mileage = mileage;
+            this.started = started;
+            this.start = ()=> {
+                    this.started = true;
+                    // return true;
+            };
+            this.stop = ()=> {
+                    this.started = false;
+                    // return false;
+            };
+            this.drive = ()=> {
+                if (this.started) {
+                    console.log("Testing my "+this.make+" around the hood.");
+                }else {
+                    console.log('Start the engine first.');
+                };
+            };
+        };
+
+        var chevy = new Car('Chevy', 'Bel Air', 'red', 1957, 2, false, 1021, false)
+        console.log(chevy)
+        var cadi = new Car("GM", "Cadillac", "tan", 1955, 5, false, 12892, true);
+        console.log(cadi)
+        var taxi = new Car("Webville Motors", "Taxi", "yellow", 1997, 4, false, 281341, true);
+        console.log(taxi)
+        var fiat = new Car("Fiat", "500", "Medium Blue", 2000, 2, false, 88000, true);
+        console.log(fiat)
+        var testCar = new Car("Webville Car", "Test Car", "yellow", 1997, 4, false, 281341, true);
+        console.log(testCar)
+        var cars = [chevy, cadi, taxi, fiat, testCar]
+        for (var i = 0; i < cars.length; i++) {
+            var car = cars[i].drive()
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

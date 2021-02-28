@@ -50,7 +50,7 @@ td {
 
 #letters {
     position: absolute;
-    left: 400px;
+    left: 480px;
     display: flex;
     flex-direction: column;
 }
@@ -112,10 +112,10 @@ td {
 }
 
 .hit {
-    background: url(/hit.jpg) no-repeat center center;
+    background: url(../images/hit.jpg) no-repeat center center;
 }
 
 .miss {
-    background: url(miss.jpg) no-repeat center center;
+    background: url(../images/miss.jpg) no-repeat center center;
 }
 
