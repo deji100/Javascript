@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duck - quak quak</title>
     <script>
-        function Duck(sound) {
-            this.sound = sound,
-            this.quack = function() {
-                console.log(this.sound);
+        Duck.prototype = {
+            quack : function() {
+                console.log(this.sound)
             }
         }
+
+        function Duck(sound) {
+            this.sound = sound;
+        }
+        
         var toy = new Duck("quack quack");
         toy.quack();
 

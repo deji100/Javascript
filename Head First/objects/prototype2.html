@@ -26,6 +26,38 @@
             this.owner = owner;
         };
 
+        SpaceRobot.prototype = new Robot();
+        SpaceRobot.prototype.constructor = SpaceRobot;
+
+        SpaceRobot.prototype.homePlanet = 'Earth';
+
+        SpaceRobot.prototype.speak = function() {
+            console.log(this.name, 'says Sir, if I may venture an opinion...');
+        }
+
+        SpaceRobot.prototype.pilot = function() {
+            console.log(this.name, 'says Thrusters? Are they important.')
+        }
+
+        function SpaceRobot(name, year, owner) {
+            this.name = name;
+            this.year = year;
+            this.owner = owner;
+        }
+
+        // C3PO
+        var c3po = new SpaceRobot('C3PO', 1977, 'L Skywalker');
+        console.log(c3po.maker)
+        c3po.makeCoffee()
+
+        // SIMON
+        var simon = new SpaceRobot('Simon', 2009, 'Carta Diana')
+        console.log(simon.homePlanet)
+        simon.pilot()
+        simon.speak()
+        console.log(simon.maker)
+
+        // Robby
         var robby = new Robot('Robby', 1956, 'Dr. Morbius');
         robby.onOffSwitch = true;
         robby.makeCoffee = ()=> {
@@ -37,15 +69,16 @@
         robby.makeCoffee();
         robby.blinkLights();
 
-        var rosie = new Robot('Rosie', 1962, 'George Jetson');
-        rosie.cleanHouse = ()=> {
-            console.log("love cleaning my owner's house");
-        }
+        // Rosie
+        // var rosie = new Robot('Rosie', 1962, 'George Jetson');
+        // rosie.cleanHouse = ()=> {
+        //     console.log("love cleaning my owner's house");
+        // }
 
-        console.log(rosie.name, 'was made by', rosie.maker, 'in the year', rosie.year, 'and owned by', rosie.owner)
-        rosie.speaks()
-        rosie.makeCoffee()
-        rosie.blinkLights()
+        // console.log(rosie.name, 'was made by', rosie.maker, 'in the year', rosie.year, 'and owned by', rosie.owner)
+        // rosie.speaks()
+        // rosie.makeCoffee()
+        // rosie.blinkLights()
 
     </script>
 </head>

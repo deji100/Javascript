@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // String.prototype.palindrome = function() {
+        //     var len = this.length-1;
+        //         for (var i = 0; i <= len; i++) {
+        //             if (this.charAt(i) !== this.charAt(len-i)) {
+        //             return false;
+        //             }
+        //             if (i === (len-i)) {
+        //             return true;
+        //             }
+        //         }
+        //     return true;
+        //     };
+        String.prototype.palindrome = function() {
+            var r = this.split("").reverse().join("");
+            return (r === this.valueOf());
+        }
+
+            var phrases = ["eve", "kayak", "mom", "wow", "Not a palindrome"];
+            for (var i = 0; i < phrases.length; i++) {
+                var phrase = phrases[i];
+                if (phrase.palindrome()) {
+                    console.log("'" + phrase + "' is a palindrome");
+                } else {
+                    console.log("'" + phrase + "' is NOT a palindrome");
+                }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

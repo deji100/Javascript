@@ -8,4 +8,4 @@ function addSong() {
 
 }
 
-window.onload = addSong;
+addSong()

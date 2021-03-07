@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Override 2</title>
+    <script>
+        String.prototype.palindrome = function() {
+            var word = 'facebook';
+            var index = this.indexOf(word)
+            if (index >= 0) {
+                return true;
+            }
+            return false
+        }
+
+        var sentences = ['I love beans', 'Who has a facebook account?','Do you have time?']
+        for (var i = 0; i < sentences.length; i++) {
+            var sentence = sentences[i]
+            if (sentence.palindrome()) {
+                console.log('Alert', sentence)
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

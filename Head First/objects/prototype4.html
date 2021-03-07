@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog prototype</title>
+    <title>Testing</title>
     <script>
 
         Dog.prototype.species = 'Canine';
@@ -63,31 +63,28 @@
         }
 
         function ShowDog(name, breed, weight, handler) {
-            Dog.call(this, name, breed, weight)
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
             this.handler = handler;
         }
 
-        var fido = new Dog('Fido', 'Mixed', 38);
-        var fluffy = new Dog('Fluffy', 'Poodle', 30);
-        var spot = new Dog('Spot', 'Chihuahua', 10);
-        var tracy = new Dog('Tracy', 'Native', 30);
-
-        console.log(tracy.isPrototypeOf(fido))
-
-        var scotty = new ShowDog('Scotty', 'Scottish Terrier', 20, 'Cookie');
-        console.log(scotty.valueOf())
-        console.log(scotty)
-        console.log(scotty.species)
-        scotty.run()
-        scotty.bark()
-        scotty.wag()
-        scotty.sit()
-        scotty.sit()
-        console.log(scotty.handler)
-        console.log(scotty.weight)
-        scotty.gait('Kid')
-
-        
+        var fido = new Dog("Fido", "Mixed", 38);
+        if (fido instanceof Dog) {
+        console.log("Fido is a Dog");
+        }
+        if (fido instanceof ShowDog) {
+        console.log("Fido is a ShowDog");
+        }
+        var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+        if (scotty instanceof Dog) {
+        console.log("Scotty is a Dog");
+        }
+        if (scotty instanceof ShowDog) {
+        console.log("Scotty is a ShowDog");
+        }
+        console.log("Fido constructor is " + fido.constructor);
+        console.log("Scotty constructor is " + scotty.constructor);
     </script>
 </head>
 <body>
