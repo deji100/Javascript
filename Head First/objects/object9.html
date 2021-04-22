@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const defaults = {
+            author: '',
+            title: '',
+            year: 2017,
+            rating: null,
+            };
+
+        const book = {
+            author: 'Joe Morgan',
+            title: 'Simplifying JavaScript',
+            };
+
+        const other_book = {
+            author: 'Deji',
+            title: 'Love is real'
+        };
+
+        const books = {
+            author: 'Segun',
+            title: 'Greatness'
+        }
+        
+        console.log({...book, ...other_book, ...books})
+        console.log(book)
+        // console.log(Object.assign({}, defaults, book))
+        // function addBookDefault(book, defaults) {
+        //     fields = Object.keys(defaults)
+        //     const updated = {}
+        //     for (let i=0; i < fields.length; i++) {
+        //         const field = fields[i]
+        //         updated[field] = book[field] || defaults[field]
+        //     }
+        //     return console.log(updated)
+        // }
+
+        // addBookDefault(book, defaults)
+    </script>
+</body>
+</html>

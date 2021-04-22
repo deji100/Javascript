@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cart = [ {
+            name: 'The Foundation Triology',
+            price: 19.99,
+            discount: false,
+            },
+            {
+            name: 'Godel, Escher, Bach',
+            price: 15.99,
+            discount: false,
+            },
+            {
+            name: 'Red Mars',
+            price: 5.99,
+            discount: true,
+            }
+        ];
+        const reward = {
+            name: 'Guide to Science Fiction',
+            discount: true,
+            price: 0,
+        };
+
+        function addFreeGift(cart) {
+            if (cart.length > 2) {
+                return console.log([...cart, reward])
+            }
+            return console.log(cart)
+        }
+
+        function summerizeCart(cart) {
+            const cartWithReward = addFreeGift(cart)
+            const discountable = cart.filter(item => item.discount)
+            if (discountable.length > 1) {
+                return {
+                    error: 'Can only have one discount.'
+                }
+            }
+            return {
+                discount: discountable.length,
+                // items: cartWithReward.length,
+                cart: cartWithReward
+            }
+        }
+
+        summerizeCart(cart)
+    </script>
+</body>
+</html>
